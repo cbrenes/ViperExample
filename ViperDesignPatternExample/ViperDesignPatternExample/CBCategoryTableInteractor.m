@@ -44,16 +44,19 @@ static const int ZERO = 0;
 #pragma mark -Create categories
 -(void)createDefaultCategories{
     CBCategory *firstCategory = [CBCategory categoryWithName:@"Sports" newsNSSet:nil];
-    [self.addDataManager addNewCategory:firstCategory];
+    [self.addDataManager addNewCategory:firstCategory counter:1];
+
+    
     CBCategory *secondCategory = [CBCategory categoryWithName:@"technology" newsNSSet:nil];
-    [self.addDataManager addNewCategory:secondCategory];
+    [self.addDataManager addNewCategory:secondCategory counter:2];
     CBCategory *ThirdCategory = [CBCategory categoryWithName:@"Economy" newsNSSet:nil];
-    [self.addDataManager addNewCategory:ThirdCategory];
+    [self.addDataManager addNewCategory:ThirdCategory counter:3];
     CBCategory *fourthCategory = [CBCategory categoryWithName:@"Travel" newsNSSet:nil];
-    [self.addDataManager addNewCategory:fourthCategory];
+    [self.addDataManager addNewCategory:fourthCategory counter:4];
     CBCategory *fifthCategory = [CBCategory categoryWithName:@"Events" newsNSSet:nil];
-    [self.addDataManager addNewCategory:fifthCategory];
+    [self.addDataManager addNewCategory:fifthCategory counter:5];
 }
+
 
 
 -(NSArray*)loadAllCategories{

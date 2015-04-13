@@ -10,4 +10,15 @@
 
 @implementation CBNews
 
+
++ (instancetype)newsWithTitle:(NSString *)titleNews descriptionNews:(NSString*)descriptionNews{
+    
+    CBNews *newsObject = [self new];
+    newsObject.descriptionNews = descriptionNews;
+    newsObject.titleNews = titleNews;
+    return newsObject;
+}
+
+
+
 @end

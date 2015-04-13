@@ -12,5 +12,6 @@
 
 
 -(NSArray*)getAllCategories;
+-(NSArray*)getNewsPerCategory:(int)categorySelected;
 
 @end

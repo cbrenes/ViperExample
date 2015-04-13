@@ -24,8 +24,8 @@
 }
 
 
-- (void)addNewCategory:(CBCategory *)categoryEntity{
-    [CBManagedCategoryNews categoryWithName:categoryEntity.name context:self.singletonObject.model.context];
+- (void)addNewCategory:(CBCategory *)categoryEntity counter:(int)counter{
+    [CBManagedCategoryNews categoryWithName:categoryEntity.name context:self.singletonObject.model.context counter:counter];
     [self.singletonObject.model saveWithErrorBlock:^(NSError *error) {
         if (!error) {
             NSLog(@"An error was ocurring in Category save method");

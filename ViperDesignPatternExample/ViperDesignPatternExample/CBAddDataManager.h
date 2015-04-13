@@ -11,6 +11,6 @@
 
 @interface CBAddDataManager : NSObject
 
-- (void)addNewCategory:(CBCategory *)categoryEntity;
+- (void)addNewCategory:(CBCategory *)categoryEntity counter:(int)counter;
 
 @end

@@ -10,4 +10,12 @@
 
 @interface CBNews : NSObject
 
+@property(nonatomic,strong) NSString *descriptionNews;
+@property(nonatomic,strong) NSString *modificationDate;
+@property(nonatomic,strong) NSString *titleNews;
+
+
++ (instancetype)newsWithTitle:(NSString *)titleNews descriptionNews:(NSString*)descriptionNews;
+
+
 @end

@@ -10,4 +10,9 @@
 
 @interface CBNewsTableInteractor : NSObject
 
+@property(nonatomic) int categorySelected;
+
+-(NSArray*)getNewsPerCategory;
+
+
 @end

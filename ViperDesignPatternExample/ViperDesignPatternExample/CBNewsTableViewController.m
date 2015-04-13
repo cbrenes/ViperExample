@@ -50,13 +50,19 @@ static  NSString *CELL_INDENTIFIER = @"CELL";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_INDENTIFIER];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_INDENTIFIER];
     }
-    
+    cell.textLabel.text = [self.tableArray objectAtIndex:indexPath.row];
     return cell;
 }
+
+
+-(void)setTableView:(NSMutableArray *)newsArray{
+    self.tableArray = newsArray;
+    [self.tableView reloadData];
+}
+
+
 @end

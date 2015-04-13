@@ -16,6 +16,6 @@
 @property (nonatomic, strong) CBCategoryTablePresenter *presenter;
 - (void)presentInterfaceFromWindow:(UIWindow *)window;
 
-- (void)showNewsView;
+- (void)showNewsView:(int)index;
 
 @end

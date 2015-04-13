@@ -53,11 +53,12 @@ static NSString * const CATEGORY_TABLE_VIEW_IDENTIFIER = @"CBCategoryTableViewCo
 }
 
 
-- (void)showNewsView {
+- (void)showNewsView:(int)index {
     CBNewsTableViewController *newsController = [CBNewsTableViewController new];
     CBNewsTablePresenter *newsPresenter = [CBNewsTablePresenter new];
     CBNewsTableWireframe *newsWireframe = [CBNewsTableWireframe new];
     CBNewsTableInteractor *newsInteractor = [CBNewsTableInteractor new];
+    newsInteractor.categorySelected = index;
     newsController.presenter = newsPresenter;
     newsPresenter.wireframe = newsWireframe;
     newsWireframe.presenter = newsPresenter;

@@ -5,6 +5,6 @@
 
 
 
-+(instancetype)categoryWithName:(NSString*)name context:(NSManagedObjectContext*)context;
++(instancetype)categoryWithName:(NSString*)name context:(NSManagedObjectContext*)context counter:(int)counter;
 
 @end

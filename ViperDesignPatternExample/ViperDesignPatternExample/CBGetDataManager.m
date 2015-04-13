@@ -11,7 +11,8 @@
 #import "CBCategory.h"
 #import "CBManagedCategoryNews.h"
 #import "NSArray+HOM.h"
-
+#import "CBNews.h"
+#import "CBManagedNews.h"
 
 @interface CBGetDataManager()
 @property (nonatomic,strong) CBSingleton *singletonObject;
@@ -23,7 +24,6 @@
 - (instancetype)init {
     if (self = [super init]) {
         _singletonObject = [CBSingleton shareCBSingleton];
-        
     }
     return self;
 }
@@ -46,6 +46,23 @@
         return [CBCategory categoryWithName:categoryNews.name newsNSSet:categoryNews.news];
     }];
 }
+
+
+
+-(NSArray*)getNewsPerCategory:(int)categorySelected{
+    NSArray *categories = [self getAllCategories];
+    CBCategory *category = [categories objectAtIndex:categorySelected];
+    return [self newsFromDataStoreEntries:[category.newsNSSet allObjects]];
+}
+
+
+- (NSArray *)newsFromDataStoreEntries:(NSArray *)entries
+{
+    return [entries arrayFromObjectsCollectedWithBlock:^id(CBManagedNews *news) {
+        return [CBNews newsWithTitle:news.titleNews descriptionNews:news.descriptionNews];
+    }];
+}
+
 
 
 

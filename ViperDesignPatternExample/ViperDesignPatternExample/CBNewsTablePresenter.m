@@ -14,8 +14,8 @@
 
 #pragma mark - Public
 - (void)configureUserInterfaceForPresentation{
-    [self.newsView setTableView:nil];
-
+    NSArray *newsPerCategory = [self.interactor getNewsPerCategory];
+    [self.newsView setTableView:[[NSMutableArray alloc] initWithArray:[newsPerCategory valueForKey:@"titleNews" ]]];
 }
 
 

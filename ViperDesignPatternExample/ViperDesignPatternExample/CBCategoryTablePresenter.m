@@ -21,7 +21,7 @@
 
 
 -(void)changeToNewsView:(int)categorySelected{
-    [self.wireframe showNewsView];
+    [self.wireframe showNewsView:categorySelected];
 }
 
 
